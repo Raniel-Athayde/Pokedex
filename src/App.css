@@ -9,10 +9,12 @@
 nav {
   height: 100px;
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   padding-bottom: 50px;
+  padding-top: 30px;
+  gap: 10px;
 }
 
 .searchbar-container {

@@ -5,9 +5,8 @@ const Navbar = () => {
     "https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png";
   return (
     <nav>
-      <div>
-        <img alt="pokeapi logo" src={logoimg} className="navbar-img" />
-      </div>
+      <div style={{ paddingRight: "280px" }}>My Pokedex using:</div>
+      <img alt="pokeapi logo" src={logoimg} className="navbar-img" />
     </nav>
   );
 };
