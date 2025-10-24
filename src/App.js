@@ -3,8 +3,8 @@ import "./App.css";
 import "./styles.css";
 import Navbar from "./Components/Navbar";
 import Searchbar from "./Components/Searchbar";
-import Pokedex from "./Components/Pokedex";
-import { getPokemons } from "./api";
+import Pokedex from "./Components/PokedexApp";
+import { catchPokemons, searchPokemon } from "./api";
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -12,8 +12,12 @@ function App() {
   const fetchPokemons = async () => {
     try {
       setLoading(true);
-      const result = await getPokemons();
-      setPokemons(result.results);
+      const data = await catchPokemons();
+      const promises = data.results.map(async (pokemon) => {
+        return await searchPokemon(pokemon.name);
+      });
+      const results = await Promise.all(promises);
+      setPokemons(results);
       setLoading(false);
     } catch (error) {}
   };

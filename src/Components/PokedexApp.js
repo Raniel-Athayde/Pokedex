@@ -1,6 +1,6 @@
 import React from "react";
 
-const Pokedex = (props) => {
+const PokedexApp = (props) => {
   const { pokemons, loading } = props;
   return (
     <div>
@@ -13,7 +13,7 @@ const Pokedex = (props) => {
         <div className="pokedex-grid">
           {pokemons.map((pokemon, index) => {
             return (
-              <div>
+              <div key={pokemon.id}>
                 <div>#{pokemon.id}</div>
                 <div>{pokemon.name}</div>
                 <img src={pokemon.sprites.front_default} alt={pokemon.name} />
@@ -26,4 +26,4 @@ const Pokedex = (props) => {
   );
 };
 
-export default Pokedex;
+export default PokedexApp;
