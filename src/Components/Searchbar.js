@@ -26,12 +26,15 @@ const Searchbar = () => {
       <div className="searchbar-btn">
         <button onClick={onButtonClickHandler}>Buscar</button>
       </div>
+      <br></br>
       {pokemon ? (
-        <div>
-          <div>{pokemon.name}</div>
-          <div>{pokemon.height + "m"}</div>
-          <div>{pokemon.weight + "kg"}</div>
+        <div style={{ display: "flex", flexDirection: "row" }}>
           <img src={pokemon.sprites.front_default} alt={pokemon.name} />
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <div>{pokemon.name}</div>
+            <div>{pokemon.height + "m"}</div>
+            <div>{pokemon.weight + "kg"}</div>
+          </div>
         </div>
       ) : null}
     </div>
